@@ -1,0 +1,35 @@
+const express = require("express");
+const path = require("path");
+const sqlite3 = require("sqlite3").verbose();
+const morgan = require("morgan");
+const cors = require("cors");
+const { init, DB_PATH } = require("./db");
+
+init(); // ensure DB + seed
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(morgan("dev"));
+app.use(express.json());
+app.use(cors());
+
+// API routes
+app.get("/api/products", (_, res) => {
+  const db = new sqlite3.Database(DB_PATH);
+  db.all("SELECT * FROM products ORDER BY id DESC", (err, rows) => {
+    if (err) return res.status(500).json({ error: "DB error" });
+    res.json(rows);
+    db.close();
+  });
+});
+
+// serve static frontend
+app.use(express.static(path.join(__dirname, "public")));
+app.get("*", (_, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`Bargain Buzz running on http://localhost:${PORT}`);
+});

@@ -1,54 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bargain Buzz</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bargain Buzz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="landing.css">
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-white shadow">
+<!--Start NavBar-->
+<header>
+  <div id="nav-bar" class="bg-white shadow sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <a href="index.html" class="text-2xl font-bold text-indigo-600">Bargain Buzz</a>
+      <a href="index.html" class="text-2xl font-bold text-indigo-600">Bargain Buzz 🐝</a>
       <nav class="space-x-4">
-        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="#Hero-Section" class="hover:text-indigo-600">Home</a>
+        <a href="#About-Section" class="hover:text-indigo-600">Our Story</a>
         <a href="products.html" class="hover:text-indigo-600">Products</a>
-        <a href="cart.html" class="hover:text-indigo-600">Cart</a>
+        <a href="#Contacts-Section" class="hover:text-indigo-600">Contacts</a>
+        <a href="#">My Cart</a>
+        <a href="#">Sign In</a>
       </nav>
     </div>
-  </header>
+  </div>
+</header>
+<!--End NavBar-->
 
-  <!-- Hero Section -->
-  <section class="bg-indigo-600 text-white py-20">
-    <div class="container mx-auto text-center px-6">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Amazing Deals, Every Day!</h1>
-      <p class="text-lg md:text-2xl mb-6">Shop the best products at unbeatable prices</p>
-      <a href="products.html" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded hover:bg-gray-100">Shop Now</a>
+<!--Start-Hero-Section-->
+<div id="Hero-Section" class="hero-image relative bg-indigo-600 text-white py-32 text-center">
+  <h1 class="text-5xl md:text-6xl font-bold mb-6">Bargain Buzz 🐝</h1>
+  <p class="text-xl md:text-2xl mb-6">
+    Your one-stop shop for everything from gadgets to cutlery
+  </p>
+  <a href="products.html" class="bg-white text-indigo-600 font-bold px-6 py-3 rounded hover:bg-gray-100">Enter the Bee Hive</a>
+</div>
+<!--End-Hero-Section-->
+
+<!--Start-About-Section-->
+<div id="About-Section" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6 md:px-12">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Our Story</h2>
+    <p class="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto mb-6 text-justify">
+      Seeing a need for affordable household appliances and lack of funds to get these appliances from far away dealers, 
+      Rodwill Prince along with his wife Leena Prince created Bargain Buzz to tackle this giant of a problem. 
+      The company’s main goal is to bring necessities that are expensive and hard to get hold of to the doorstep of locals at a much more affordable price while maintaining good quality.
+    </p>
+    <p class="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto text-justify">
+      Like all great businesses, Bargain Buzz started as an idea which through hard work and dedication became a thriving company 
+      that employs locals and gives them a chance to learn while they earn.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <img src="assets/IMG_E0371.JPG" alt="Bargain Buzz Team" class="w-full h-auto rounded shadow">
+      <img src="assets/IMG_E0372.JPG" alt="Bargain Buzz Store" class="w-full h-auto rounded shadow">
     </div>
-  </section>
+  </div>
+</div>
+<!--End-About-Section-->
 
-  <!-- Featured Products -->
-  <section class="container mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold mb-8 text-center">Featured Products</h2>
-    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <!-- Products will be injected here by JS -->
+<!--Start-Featured-Products-->
+<section class="container mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold mb-8 text-center">Featured Products</h2>
+  <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <!-- Products will be injected here by JS -->
+  </div>
+</section>
+<!--End-Featured-Products-->
+
+<!--Start-Contacts-Section-->
+<div id="Contacts-Section" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6 md:px-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">Get in Touch</h2>
+    <p class="text-gray-700 text-lg md:text-xl text-center mb-8">
+      There are many ways to get in touch with us. We make it our first priority to tend to our clients, whom we regard as family. 
+      Feel free to contact us below and we'll make sure to get back to you within the same day. Remember, stay Buzzing!
+    </p>
+    <div class="max-w-2xl mx-auto">
+      <form action="https://formsubmit.co/moholengmokoena2@gmail.com" method="POST" class="space-y-4 bg-white p-6 rounded shadow">
+        <input type="text" name="firstname" placeholder="First Name" required class="w-full p-2 border rounded">
+        <input type="text" name="lastname" placeholder="Last Name" required class="w-full p-2 border rounded">
+        <input type="text" name="Number" placeholder="Number" required maxlength="12" class="w-full p-2 border rounded">
+        <select name="city" class="w-full p-2 border rounded">
+          <option value="eersterivier">Eersterivier</option>
+          <option value="belhar">Belhar</option>
+          <option value="delft">Delft</option>
+        </select>
+        <textarea name="subject" placeholder="Write something.." style="height:170px" class="w-full p-2 border rounded"></textarea>
+        <input type="submit" value="Submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 cursor-pointer">
+      </form>
     </div>
-  </section>
+  </div>
+</div>
+<!--End-Contacts-Section-->
 
-  <!-- Footer -->
-  <footer class="bg-white border-t mt-12">
-    <div class="container mx-auto py-6 text-center text-gray-600">
-      &copy; 2025 Bargain Buzz. All rights reserved.
-    </div>
-  </footer>
+<!--Footer-->
+<footer class="bg-white border-t mt-12 py-6 text-center text-gray-600">
+  &copy; 2025 Bargain Buzz. All rights reserved.
+</footer>
 
-  <!-- JS to fetch products -->
-  <script src="js/main.js"></script>
-  <script>
-    loadProducts();
-  </script>
+<!--JS-->
+<script src="js/main.js"></script>
+<script>
+  loadProducts();
+</script>
+
 </body>
 </html>
